@@ -4,15 +4,17 @@ This repository contains a small Next.js application used to demonstrate a compl
 
 ## Live Application Link
 
-Pending deployment: `https://your-vercel-app-url.vercel.app`
+https://devops-hw1.vercel.app
 
 ## Screenshots
-
-Add these screenshots after deployment:
 
 ### Hosted Application
 
 ![Hosted application](docs/screenshots/hosted-application.png)
+
+### Vercel Production Deployment
+
+![Vercel production deployment](docs/screenshots/vercel-website-success.png)
 
 ### Successful GitHub Actions Run
 
