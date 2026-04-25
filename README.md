@@ -37,25 +37,19 @@ The deployment job uses `needs: test`, so a failing test, lint error, or build e
 
 Chosen strategy: **Blue-Green-style deployment using Vercel immutable deployments**.
 
-Vercel creates a new deployment for each successful release. The current production deployment continues serving traffic while the new version is built and validated by the pipeline. After the workflow passes, the production alias is moved to the new deployment. This simulates a Blue-Green release because users are switched from the old stable deployment to the new deployment only after the new version is ready.
+Each successful pipeline creates a new immutable Vercel deployment. The current production version remains live while GitHub Actions runs tests, lint, build, and deployment. Production traffic is switched to the new version only after the workflow succeeds.
 
-Safety steps used:
-
-1. Pull requests run the same test, lint, and build checks before merge.
-2. Production deployment runs only from the `main` branch.
-3. The deployment job depends on the CI job with `needs: test`.
-4. Vercel keeps previous deployments available for rollback.
+This is safe for the project because production deployment runs only from `main`, and the deploy job depends on the CI job with `needs: test`.
 
 ## Rollback Guide
 
 If a production bug is discovered:
 
-1. Open the Vercel dashboard for this project.
-2. Go to the **Deployments** tab.
-3. Find the previous stable production deployment.
-4. Use Vercel's rollback option to promote the previous stable deployment.
-5. Verify the live application URL after rollback.
-6. Revert or fix the broken commit in GitHub before deploying again.
+1. Open the Vercel project dashboard.
+2. Go to **Deployments**.
+3. Select the previous stable deployment and use Vercel's rollback option.
+4. Verify `https://devops-hw1.vercel.app`.
+5. Revert or fix the broken commit before deploying again.
 
 CLI rollback option:
 
