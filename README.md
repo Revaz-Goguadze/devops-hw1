@@ -20,6 +20,10 @@ https://devops-hw1.vercel.app
 
 ![Successful GitHub Actions run](docs/screenshots/github-actions-success.png)
 
+### GitHub Actions Run History
+
+![GitHub Actions run history](docs/screenshots/github-actions-workflow-history.png)
+
 ## Pipeline Description
 
 The pipeline is defined in `.github/workflows/main.yml` and runs on every push and pull request to `main`.
