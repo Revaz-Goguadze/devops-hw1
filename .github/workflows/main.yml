@@ -11,7 +11,7 @@ on:
 
 jobs:
   test:
-    name: CI - Test and Build
+    name: CI - Verify and Build
     runs-on: ubuntu-latest
 
     steps:

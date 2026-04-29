@@ -5,9 +5,9 @@ const pipelineSteps = [
     status: "Source control",
   },
   {
-    title: "Quality gate",
+    title: "Verification stage",
     detail: "Dependencies install, Jest tests run, and Next.js builds.",
-    status: "CI required",
+    status: "CI verification",
   },
   {
     title: "Release",
